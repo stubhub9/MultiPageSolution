@@ -25,6 +25,12 @@
 			<Button
 				Content="Page2"
 				MinWidth="100" Click="Button_Click_Page2"/>
+			<Button
+		 Content="PageNext"
+		 MinWidth="100" Click="Button_Click_Page2"/>
+			<Button
+		 Content="Page2"
+		 MinWidth="100" Click="Button_Click_Page2"/>
 
 		</StackPanel>
 

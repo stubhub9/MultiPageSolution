@@ -8,11 +8,16 @@
       Title="GradientSpreadMethods" Height="600" Width="1200"
 			Background="Bisque">
 
+	<Page.Resources>
+		<SolidColorBrush x:Key="XamlSolidBrush1" Color="#CC5500"/>
+	</Page.Resources>
 
 
 
 
-	<Grid HorizontalAlignment="Left">
+
+	<Grid Name="mainGrid" 
+		HorizontalAlignment="Left">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*"/>
 			<ColumnDefinition Width="*"/>
@@ -37,7 +42,7 @@
 			Background="IndianRed"
 			FontSize="18"
 			FontWeight="Bold"
-			TextWrapping="Wrap">The following illustration shows the available spread methods and their effect on LinearGradientBrush and RadialGradientBrush. The red line indicates the gradient space. A LinearGradientBrush defines its gradient space with its StartPoint and EndPoint properties. A RadialGradientBrush defines its gradient space with its Center, RadiusX, and RadiusY properties.
+			TextWrapping="Wrap">The following illustration shows the available spread methods and their effect on LinearGradientBrush and RadialGradientBrush. The gradient space is the inner half of the control. A LinearGradientBrush defines its gradient space with its StartPoint and EndPoint properties. A RadialGradientBrush defines its gradient space with its Center, RadiusX, and RadiusY properties.
 		</TextBlock>
 
 
@@ -245,6 +250,57 @@ TextWrapping="Wrap">Center="0.5,0.5" RadiusX="0.3" RadiusY="0.3" SpreadMethod="P
 			</Rectangle.Fill>
 		</Rectangle>
 
+		<Rectangle 
+		Grid.Column="2" Grid.Row="5" 
+		Width="150" Height="75" Stroke="Black">
+			<Rectangle.Fill>
+
+				<!--  -->
+				<RadialGradientBrush 
+				Center="0.5,0.5"
+				RadiusX="0.65" 
+				RadiusY="0.6" 
+				>
+					<GradientStop Color="#AA00AA" Offset="0" />
+					<GradientStop Color="#999966" Offset="0.26" />
+					<GradientStop Color="#0000FF" Offset="0.27" />
+					<GradientStop Color="#0000FF" Offset="0.28" />
+					<GradientStop Color="#996666" Offset="0.29" />
+					<GradientStop Color="#885555" Offset="0.55" />
+					<GradientStop Color="#FFFF66" Offset="0.62" />
+					<GradientStop Color="#FFFF66" Offset="0.64" />
+					<GradientStop Color="#66FFFF" Offset="0.65" />
+					<GradientStop Color="#66FFFF" Offset="0.67" />
+					<GradientStop Color="#FF0000" Offset="0.70" />
+					<GradientStop Color="#FF0000" Offset="0.72" />
+					<GradientStop Color="#999900" Offset="0.73" />
+					<GradientStop Color="#999900" Offset="0.75" />
+					<GradientStop Color="#0000AA" Offset="0.78" />
+					<GradientStop Color="#0000FF" Offset="0.79" />
+					<GradientStop Color="#666666" Offset="0.8" />
+					<GradientStop Color="#333333" Offset="1" />
+				</RadialGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<Rectangle 
+		Grid.Column="2" Grid.Row="6" 
+		Width="150" Height="75" Stroke="Black">
+			<Rectangle.Fill>
+
+				<!--  -->
+				<RadialGradientBrush 
+				Center="0.5,0.5"
+				RadiusX="0.65" 
+				RadiusY="0.6" 
+				>
+					<GradientStop Color="#BBBB44" Offset="0.0" />
+					<GradientStop Color="#AAAA33" Offset="0.5" />
+					<GradientStop Color="#999911" Offset="0.98" />
+					<GradientStop Color="#8F8F00" Offset="1" />
+				</RadialGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+
 
 		<!--   BUTTONS    *****    BUTTONS    *****    BUTTONS    *****    BUTTONS    *****    BUTTONS    *****    BUTTONS    *****    BUTTONS    *****    BUTTONS    *****    BUTTONS    *****    BUTTONS    *****    BUTTONS    *****    BUTTONS    *****    -->
 
@@ -264,8 +320,8 @@ TextWrapping="Wrap">Center="0.5,0.5" RadiusX="0.3" RadiusY="0.3" SpreadMethod="P
 					StartPoint="0.1,0.5" 
 					EndPoint="0.2,0.5" 
 					SpreadMethod="Pad">
-					<GradientStop Color="#0000DD" Offset="0.6" />
-					<GradientStop Color="#997700" Offset="0.7" />
+					<GradientStop Color="#0000DD" Offset="0.5" />
+					<GradientStop Color="#997700" Offset="0.6" />
 				</LinearGradientBrush>
 			</Button.Background>
 			<TextBlock
@@ -291,8 +347,8 @@ TextWrapping="Wrap">Center="0.5,0.5" RadiusX="0.3" RadiusY="0.3" SpreadMethod="P
 				<LinearGradientBrush 
 					StartPoint="0.8,0.5" 
 					EndPoint="0.9,0.5">
-					<GradientStop Color="#997700" Offset="0.6" />
-					<GradientStop Color="#0000DD" Offset="0.7" />
+					<GradientStop Color="#997700" Offset="0.5" />
+					<GradientStop Color="#0000DD" Offset="0.6" />
 				</LinearGradientBrush>
 			</Button.Background>
 			<TextBlock
@@ -301,7 +357,7 @@ TextWrapping="Wrap">Center="0.5,0.5" RadiusX="0.3" RadiusY="0.3" SpreadMethod="P
 			FontSize="25"
 			FontWeight="Bold"
 			TextWrapping="Wrap">
-				No Pad 
+				No Pad
 			</TextBlock>
 		</Button>
 
@@ -309,33 +365,131 @@ TextWrapping="Wrap">Center="0.5,0.5" RadiusX="0.3" RadiusY="0.3" SpreadMethod="P
 
 
 		<Button
-		Grid.Column="1" Grid.Row="6"
-		Width="150" Height="75"
-		HorizontalAlignment="Left"
-		HorizontalContentAlignment="Right">
+	Grid.Column="1" Grid.Row="6"
+	Width="150" Height="75"
+	HorizontalAlignment="Center"
+	HorizontalContentAlignment="Right">
 			<Button.Background>
 
 				<!-- Pad -->
 				<LinearGradientBrush 
-				StartPoint="0.1,0.5" 
-				EndPoint="0.2,0.5" 
-				SpreadMethod="Pad">
-					<GradientStop Color="#0000DD" Offset="0.6" />
+			StartPoint="0.1,0.5" 
+			EndPoint="0.2,0.5" 
+			SpreadMethod="Reflect">
+					<GradientStop Color="#3333DD" Offset="0.0" />
 					<GradientStop Color="#997700" Offset="0.7" />
 				</LinearGradientBrush>
 			</Button.Background>
 			<TextBlock
-		HorizontalAlignment="Right"
-		VerticalAlignment="Center"
-		FontSize="25"
-		FontWeight="Bold"
-		TextWrapping="Wrap">
-			Pad
+	HorizontalAlignment="Right"
+	VerticalAlignment="Center"
+	FontSize="25"
+	FontWeight="Bold"
+	TextWrapping="Wrap">
+		spread Reflect
 			</TextBlock>
 		</Button>
+		<Button
+	Grid.Column="0" Grid.Row="6"
+	Width="150" Height="75"
+	HorizontalAlignment="Center"
+	HorizontalContentAlignment="Left">
+			<Button.Background>
+
+				<!-- Pad -->
+				<LinearGradientBrush 
+			StartPoint="0.9,0.2" 
+			EndPoint="0.8,0.5" 
+			SpreadMethod="Repeat">
+					<GradientStop Color="#3333DD" Offset="0.5" />
+					<GradientStop Color="#33DD33" Offset="0.62" />
+					<GradientStop Color="#33DD33" Offset="0.64" />
+					<GradientStop Color="#DD7700" Offset="0.65" />
+					<GradientStop Color="#DD7700" Offset="0.69" />
+					<GradientStop Color="#33DDDD" Offset="0.70" />
+					<GradientStop Color="#336633" Offset="0.72" />
+				</LinearGradientBrush>
+			</Button.Background>
+			<TextBlock
+	HorizontalAlignment="Right"
+	VerticalAlignment="Center"
+	FontSize="25"
+	FontWeight="Bold"
+	TextWrapping="Wrap">
+		Repeat
+			</TextBlock>
+		</Button>
+		
+		
+		
+		<StackPanel 
+			Grid.Column="3" Grid.Row="5" 
+			Grid.RowSpan="2"
+			Orientation="Vertical" >
+			<StackPanel.Resources>
+				<Style x:Key="GreenButtonStyle">
+					<Setter Property="Control.Background" Value="#006600" />
+					<Setter Property="Control.Foreground" Value="#FF00AA" />
+					<Setter Property="TextBlock.FontSize" Value="8" />
+					<Setter Property="TextBlock.FontWeight" Value="Bold" />
+					<Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+				</Style>
+			</StackPanel.Resources>
 
 
 
+			<Button
+			Background="{DynamicResource ResourceKey=XamlSolidBrush1}"
+			Content="DynamicResource XamlSolidBrush1" 
+				Height="40" Width="150"/>
+
+			<Button
+				Height="40" Width="150"
+				Style="{StaticResource GreenButtonStyle}">Style="{StaticResource GreenButtonStyle}</Button>
+
+			<Button
+				
+				Height="40" Width="150"
+				>I am animated
+				<Button.Background>
+					<SolidColorBrush x:Name="AnimBrush"/>
+				</Button.Background>
+				<Button.Triggers>
+					<EventTrigger RoutedEvent="Button.Loaded">
+						<BeginStoryboard>
+							<Storyboard>
+								<ColorAnimation
+            Storyboard.TargetName="AnimBrush" 
+            Storyboard.TargetProperty="(SolidColorBrush.Color)"
+            From="Red" To="Green" Duration="0:0:2" 
+            AutoReverse="True" RepeatBehavior="Forever" />
+							</Storyboard>
+						</BeginStoryboard>
+					</EventTrigger>
+				</Button.Triggers>
+			</Button>
+
+
+			<Button
+				Height="40" >
+				<Button.Background>
+					<ImageBrush ImageSource="RefImages\Cross32.png" />
+				</Button.Background>
+			</Button>
+				
+<!--
+			-->
+			
+
+
+
+
+
+
+
+
+
+		</StackPanel>
 
 
 

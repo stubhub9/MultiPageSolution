@@ -23,13 +23,25 @@ namespace PageNav
 
         private void Button_Click_Page1 ( object sender, RoutedEventArgs e )
         {
-            MainFrame.Content = new Page1 ();
+            MainFrame.Content = new RefPages.GradientSpreadMethods ();
         }
 
         private void Button_Click_Page2 ( object sender, RoutedEventArgs e )
         {
-            MainFrame.Content = new Page2 ();
-
+            MainFrame.Content = new MinXamlPages.RadialGradientPage ();
         }
+
+        private void Button_Click_Page3 ( object sender, RoutedEventArgs e )
+        {
+            MainFrame.Content = new MinXamlPages.RadialGradientPage ();
+        }
+
+
+
+        private void Button_Click_Page4 ( object sender, RoutedEventArgs e )
+        {
+            MainFrame.Content = new MinXamlPages.RadialGradientPage ();
+        }
+
     }
 }
